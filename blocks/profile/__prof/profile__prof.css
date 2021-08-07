@@ -1,0 +1,18 @@
+.profile__prof{
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+  margin-top: 10px;
+  line-height: 22px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width:767px){
+  .profile__prof{
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

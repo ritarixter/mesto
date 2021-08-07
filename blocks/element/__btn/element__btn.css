@@ -1,0 +1,9 @@
+.element__btn{
+  background:url(../../../images/like.svg) no-repeat center;
+  min-width: 22px;
+  height: 19px;
+}
+
+.element__btn:hover{
+  opacity: .5;
+}

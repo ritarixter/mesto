@@ -1,0 +1,12 @@
+.popup__btn{
+  position: absolute;
+  top: -40px;
+  right: -40px;
+}
+
+@media screen and (max-width:767px) {
+  .popup__btn{
+    top: -36px;
+    right: 0px;
+  }
+}

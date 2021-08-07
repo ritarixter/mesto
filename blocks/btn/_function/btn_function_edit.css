@@ -1,0 +1,14 @@
+.btn_function_edit{
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+  background: url(../../../images/change.svg) no-repeat center;
+}
+
+@media screen and (max-width:767px){
+  .btn_function_edit{
+    width: 18px;
+    height: 18px;
+  }
+}
+

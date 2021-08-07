@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Проектная работа на месяц">
+  <meta name="keywords" content="HTML5, CSS">
+  <meta name="author" content="Гнездилова Маргарита">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+
+<body class="root">
+  <div class="page">
+    <header class="header">
+      <div class="header__content">
+        <img src="./images/logo.svg" alt="Лого Mesto Russia" class="header__logo">
+      </div>
+    </header>
+    <main class="main">
+      <section class="profile page__container">
+        <div class="profile__content">
+          <img src="./images/avatar.jpg" alt="Аватар" class="profile__avatar">
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто
+            </h1>
+            <button type="button" class="btn btn_function_edit profile__edit-button" aria-label="edit">
+            </button>
+            <p class="profile__prof">Исследователь океана</p>
+          </div>
+          <button type="button" class="btn btn_function_add profile__add-button" aria-label="add"></button>
+        </div>
+      </section>
+      <section class="page__container">
+        <ul class="elements">
+      
+        </ul>
+      </section>
+    </main>
+    <footer class="footer page__container">
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
+    <div class="popup popup__profile-edit">
+      <div class="popup__container">
+        <button type="button" class="btn btn_function_close popup__btn popup__btn-profile" aria-label="close"></button>
+        <form name="profile-edit">
+          <h2 class="popup__heading">Редактировать профиль</h2>
+          <input type="text" placeholder="Имя" value="" class="popup__input" name="firstname" required>
+          <input type="text" placeholder="Профессия" value="" class="popup__input" name="profession"
+            required>
+          <button type="submit" class="popup__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup__card-edit">
+      <div class="popup__container">
+        <button type="button" class="btn btn_function_close popup__btn popup__btn-card" aria-label="close"></button>
+        <form name="card-edit">
+          <h2 class="popup__heading">Новое место</h2>
+          <input type="text" placeholder="Название" class="popup__input popup__card-name" name="card__name" required>
+          <input type="text" placeholder="Ссылка на картинку" class="popup__input popup__card-link" name="card__link"
+            required>
+          <button type="submit" class="popup__button popup__card-save">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup__image">
+      <div class="popup__container popup__image-container">
+        <button type="button" class="btn btn_function_close popup__btn popup__btn-image" aria-label="close"></button>
+        <img src="" alt="Большая картинка с карточки" class="popup__img">
+      </div>
+    </div>
+  </div>
+  <template id="template-element">
+    <li class="element">
+      <button class="btn element__delete">
+        <img src="./images/delete.svg" alt="Кнопка удаления карточки">
+      </button>
+      <img src="" alt="" class="element__image">
+      <div class="element__content">
+        <h2 class="element__name"></h2>
+        <button type="button" class="btn element__btn" aria-label="like">
+        </button>
+      </div>
+    </li>
+  </template>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
