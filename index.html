@@ -26,11 +26,11 @@
           <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто
             </h1>
-            <button type="button" class="btn btn_function_edit profile__edit-button" aria-label="edit">
+            <button type="button" class="btn btn_function_edit profile__edit-button" aria-label="Редактировать">
             </button>
             <p class="profile__prof">Исследователь океана</p>
           </div>
-          <button type="button" class="btn btn_function_add profile__add-button" aria-label="add"></button>
+          <button type="button" class="btn btn_function_add profile__add-button" aria-label="Добавить"></button>
         </div>
       </section>
       <section class="page__container">
@@ -42,34 +42,35 @@
     <footer class="footer page__container">
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
-    <div class="popup popup__profile-edit">
+    <div class="popup popup_type_profile">
       <div class="popup__container">
         <button type="button" class="btn btn_function_close popup__btn popup__btn-profile" aria-label="close"></button>
         <form name="profile-edit">
           <h2 class="popup__heading">Редактировать профиль</h2>
-          <input type="text" placeholder="Имя" value="" class="popup__input" name="firstname" required>
-          <input type="text" placeholder="Профессия" value="" class="popup__input" name="profession"
+          <input type="text" placeholder="Имя" value="" class="popup__input popup__profile-name" name="firstname" required>
+          <input type="text" placeholder="Профессия" value="" class="popup__input popup__profile-prof" name="profession"
             required>
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
       </div>
     </div>
-    <div class="popup popup__card-edit">
+    <div class="popup popup_type_card">
       <div class="popup__container">
         <button type="button" class="btn btn_function_close popup__btn popup__btn-card" aria-label="close"></button>
         <form name="card-edit">
           <h2 class="popup__heading">Новое место</h2>
           <input type="text" placeholder="Название" class="popup__input popup__card-name" name="card__name" required>
-          <input type="text" placeholder="Ссылка на картинку" class="popup__input popup__card-link" name="card__link"
+          <input type="text" placeholder="Ссылка на картинку" class="popup__input popup__card-link" type="url" name="card__link"
             required>
           <button type="submit" class="popup__button popup__card-save">Сохранить</button>
         </form>
       </div>
     </div>
-    <div class="popup popup__image">
+    <div class="popup popup_type_image">
       <div class="popup__container popup__image-container">
         <button type="button" class="btn btn_function_close popup__btn popup__btn-image" aria-label="close"></button>
-        <img src="" alt="Большая картинка с карточки" class="popup__img">
+        <img src="" alt="" class="popup__img">
+        <span class="popup__label"></span>
       </div>
     </div>
   </div>
@@ -86,7 +87,7 @@
       </div>
     </li>
   </template>
+  <script src="./js/initial-сards.js"></script>
   <script src="./js/script.js"></script>
 </body>
-
 </html>

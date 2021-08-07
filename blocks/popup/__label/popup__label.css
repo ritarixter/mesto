@@ -1,0 +1,10 @@
+.popup__label{
+  color: #fff;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+  display: block;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+}
