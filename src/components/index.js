@@ -14,21 +14,32 @@ const cards = document.querySelector('.elements');
 const cardTemplate = document.querySelector('#template-element').content;
 const popupCardName = document.querySelector('.popup__card-name');
 const popupCardLink = document.querySelector('.popup__card-link');
+const popupOverlay = document.querySelectorAll('.popup');
+
+enableValidation({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+}); 
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-} 
+} //1.modal.js
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-} 
+} //2.modal.js
+
 
 function handleProfileFormSubmit (evt) {
   evt.preventDefault(); 
   profileName.textContent = popupProfileName.value;
   profileProf.textContent = popupProfileProf.value;
   closePopup(popupProfile);
-}
+}//3.modal
 
 function createCard (imgValue,nameValue) {
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
@@ -53,7 +64,7 @@ function createCard (imgValue,nameValue) {
     popupLabel.textContent=evt.target.alt;
   })
   return cardElement
-}
+}//4 card.js
 
 function handleCardFormSubmit(evt){
   evt.preventDefault(); 
@@ -61,7 +72,7 @@ function handleCardFormSubmit(evt){
   popupCardName.value='';
   popupCardLink.value='';
   closePopup(popupCard);
-}
+}//5 cards.js
 
 editButton.addEventListener('click', function(){
   openPopup(popupProfile);
@@ -85,8 +96,27 @@ popupCloseImage.addEventListener('click', function(){
   closePopup(popupImage);
 })
 
-popupProfile.addEventListener('submit', handleProfileFormSubmit);
+popupOverlay.forEach(item => {
+  item.addEventListener('click', function(evt){
+    if(evt.target.classList.contains('popup')){
+    closePopup(popupImage);
+    closePopup(popupCard);
+    closePopup(popupProfile);
+  }
+  });
 
+})
+
+document.addEventListener('keydown', function(evt){
+  if(evt.key === "Escape"){
+  closePopup(popupImage);  
+  closePopup(popupCard);
+  closePopup(popupProfile);
+}
+})
+
+
+popupProfile.addEventListener('submit', handleProfileFormSubmit);
 popupCard.addEventListener('submit',handleCardFormSubmit);
 
 initialCards.forEach(item => {
