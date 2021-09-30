@@ -16,16 +16,15 @@
   <div class="page">
     <header class="header">
       <div class="header__content">
-        <img src="./images/logo.svg" alt="Лого Mesto Russia" class="header__logo">
+        <img src="./src/images/logo.svg" alt="Лого Mesto Russia" class="header__logo">
       </div>
     </header>
     <main class="main">
       <section class="profile page__container">
         <div class="profile__content">
-          <img src="./images/avatar.jpg" alt="Аватар" class="profile__avatar">
+          <img src="./src/images/avatar.jpg" alt="Аватар" class="profile__avatar">
           <div class="profile__info">
-            <h1 class="profile__name">Жак-Ив Кусто
-            </h1>
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
             <button type="button" class="btn btn_function_edit profile__edit-button" aria-label="Редактировать">
             </button>
             <p class="profile__prof">Исследователь океана</p>
@@ -35,7 +34,7 @@
       </section>
       <section class="page__container">
         <ul class="elements">
-      
+
         </ul>
       </section>
     </main>
@@ -48,14 +47,19 @@
         <form name="profile-edit" novalidate class="popup__form">
           <h2 class="popup__heading">Редактировать профиль</h2>
 
-          <input type="text" placeholder="Имя" value="" class="popup__input popup__profile-name" name="user-name" maxlength="40" required minlength="2"> 
-          <span id="user-name-error" class="error"></span>
+          <div class="popup__input-container">
+            <input type="text" placeholder="Имя" value="" class="popup__input popup__profile-name" name="user-name"
+              maxlength="40" required minlength="2">
+            <span id="user-name-error" class="popup__error"></span>
+          </div>
 
-          <input type="text" placeholder="Профессия" value="" class="popup__input popup__profile-prof" name="profession"
-            required minlength="2" maxlength="400">
-            <span id="profession-error" class="error"></span>
+          <div class="popup__input-container">
+            <input type="text" placeholder="Профессия" value="" class="popup__input popup__profile-prof"
+              name="profession" required minlength="2" maxlength="400">
+            <span id="profession-error" class="popup__error"></span>
+          </div>
 
-          <button type="submit" class="popup__button popup__button_disabled">Сохранить</button>
+          <button type="submit" class="popup__button">Сохранить</button>
         </form>
       </div>
     </div>
@@ -64,15 +68,19 @@
         <button type="button" class="btn btn_function_close popup__btn popup__btn-card" aria-label="close"></button>
         <form name="card-edit" novalidate class="popup__form">
           <h2 class="popup__heading">Новое место</h2>
+          <div class="popup__input-container">
+            <input type="text" placeholder="Название" class="popup__input popup__card-name" name="card-name"
+              minlength="2" maxlength="30" required>
+            <span id="card-name-error" class="popup__error"></span>
+          </div>
 
-          <input type="text" placeholder="Название" class="popup__input popup__card-name" name="card-name" minlength="2" maxlength="30" required>
-          <span id="card-name-error" class="error"></span>
-
-          <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__card-link" name="card-link"
-            required>
-          <span id="card-link-error" class="error"></span>
-
-          <button type="submit" class="popup__button popup__card-save">Сохранить</button>
+          <div class="popup__input-container">
+            <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__card-link" name="card-link"
+              required>
+            <span id="card-link-error" class="popup__error"></span>
+          </div>
+          <button type="submit" class="popup__button popup__card-save popup__button_disabled"
+            disabled>Сохранить</button>
         </form>
       </div>
     </div>
@@ -87,7 +95,7 @@
   <template id="template-element">
     <li class="element">
       <button class="btn element__delete">
-        <img src="./images/delete.svg" alt="Кнопка удаления карточки">
+        <img src="./src/images/delete.svg" alt="Кнопка удаления карточки">
       </button>
       <img src="" alt="" class="element__image">
       <div class="element__content">
@@ -97,7 +105,13 @@
       </div>
     </li>
   </template>
+  <script src="./src/components/constants.js"> </script>
+  <script src="./src/components/utils.js"> </script>
+  <script src="./src/components/modal.js"> </script>
   <script src="./src/components/initial-сards.js"></script>
-  <script src="./src/components/index.js"></script>
+  <script src="./src/components/card.js"> </script>
+  <script src="./src/components/validate.js"> </script>
+  <script src="./pages/index.js"></script>
 </body>
+
 </html>

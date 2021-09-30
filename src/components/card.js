@@ -1,4 +1,3 @@
-
 function createCard (imgValue,nameValue) {
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
   const cardImage = cardElement.querySelector('.element__image');
