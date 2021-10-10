@@ -1,7 +1,7 @@
 .btn_function_close{
   width: 32px;
   height: 32px;
-  background: url(../../../src/images/close-icon.svg) no-repeat center;
+  background: url(../../../images/close-icon.svg) no-repeat center;
   background-size: 32px 32px;
 }
 

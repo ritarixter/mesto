@@ -24,3 +24,5 @@ const variablesValidation = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
 }; 
+
+export {popupProfile,popupCard,popupImage,popupCloseProfile,popupCloseCard,popupCloseImage,editButton,addButton,popupProfileName,popupProfileProf,profileName,profileProf,cards,cardTemplate,popupCardName,popupCardLink,popupOverlay,variablesValidation}

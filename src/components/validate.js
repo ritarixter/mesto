@@ -36,7 +36,7 @@ function inputIsValid(input, errorClass, inputErrorClass) {
   }
 }
 
-function enableValidation(variablesValidation) {
+export default function enableValidation(variablesValidation) {
   const forms = Array.from(
     document.querySelectorAll(variablesValidation.formSelector)
   );
@@ -62,4 +62,4 @@ function enableValidation(variablesValidation) {
     });
   });
 }
-enableValidation(variablesValidation);
+

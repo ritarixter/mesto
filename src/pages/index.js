@@ -1,3 +1,10 @@
+import './index.css'
+import {editButton,popupProfile,popupProfileName,popupProfileProf,profileName,profileProf,addButton,popupCloseProfile,popupCloseCard,popupCard,popupImage,popupOverlay,variablesValidation,popupCloseImage,cards} from '../components/constants.js';
+import {initialCards} from "../components/initial-сards.js";
+import {openPopup,closePopup,handleProfileFormSubmit,closePopupOverlay} from "../components/modal.js";
+import {createCard,handleCardFormSubmit} from "../components/card.js";
+import enableValidation from "../components/validate.js"
+
 editButton.addEventListener('click', function(){
   openPopup(popupProfile);
   popupProfileName.value = profileName.textContent;
@@ -20,27 +27,11 @@ popupCloseImage.addEventListener('click', function(){
   closePopup(popupImage);
 })
 
-popupOverlay.forEach(item => {
-  item.addEventListener('click', function(evt){
-    if(evt.target.classList.contains('popup')){
-    closePopup(popupImage);
-    closePopup(popupCard);
-    closePopup(popupProfile);
-  }
-  });
-})
-
-document.addEventListener('keydown', function(evt){
-  if(evt.key === "Escape"){
-  closePopup(popupImage);  
-  closePopup(popupCard);
-  closePopup(popupProfile);
-}
-})
-
 popupProfile.addEventListener('submit', handleProfileFormSubmit);
 popupCard.addEventListener('submit',handleCardFormSubmit);
 
 initialCards.forEach(item => {
   cards.prepend(createCard(item.link,item.name));
 })
+
+enableValidation(variablesValidation);

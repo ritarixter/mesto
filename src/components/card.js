@@ -1,3 +1,6 @@
+import {popupCardName,popupCardLink,popupCard,popupImage,cardTemplate,cards} from "./constants.js"
+import {openPopup, closePopup} from "./modal.js"
+
 function createCard (imgValue,nameValue) {
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
   const cardImage = cardElement.querySelector('.element__image');
@@ -30,3 +33,5 @@ function handleCardFormSubmit(evt){
   popupCardLink.value='';
   closePopup(popupCard);
 }
+
+export {createCard,handleCardFormSubmit};
